@@ -50,16 +50,16 @@ function renderPage(page) {
             <p>昨日最高：${Number(stock.high).toFixed(2)}</p>
 
             <p>
-                ${stock.osc >= 0 ? "📈" : "📉"} OSC：
-                <span
-                s.tyle="
-                color: ${stock.osc >= 0 ? '#d32f2f' : '#2e7d32'};
-                font-weight: bold;
-                "
-                >
-                ${Number(stock.osc).toFixed(3)}
-                </span>
-            </p>
+    ${stock.osc >= 0 ? "📈" : "📉"} OSC：
+    <span
+        style="
+            color: ${stock.osc >= 0 ? '#d32f2f' : '#2e7d32'};
+            font-weight: bold;
+        "
+    >
+        ${Number(stock.osc).toFixed(3)}
+    </span>
+</p>
         </div>
 
         `;

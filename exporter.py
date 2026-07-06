@@ -1,0 +1,29 @@
+import json
+import os
+from datetime import datetime
+
+
+def save_result(results):
+
+    os.makedirs("data", exist_ok=True)
+
+    output = {
+        "update_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "count": len(results),
+        "stocks": results
+    }
+
+    with open(
+        "data/result.json",
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        json.dump(
+            output,
+            f,
+            ensure_ascii=False,
+            indent=4
+        )
+
+    print("✅ 已輸出 data/result.json")

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>台股每日選股</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+
+    <meta name="theme-color" content="#1565c0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="台股選股">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📈 台股每日選股</h1>
+
+    <div class="info">
+
+        <div class="info-row">
+            <span>🕒 更新時間</span>
+            <span>{{ data.update_time }}</span>
+        </div>
+
+        <div class="info-row">
+            <span>🎯 符合條件</span>
+            <span>{{ data.count }} 檔</span>
+        </div>
+
+    </div>
+
+    {% for stock in data.stocks %}
+
+    <div class="card">
+
+        <h2>{{ stock.code }} {{ stock.name }}</h2>
+
+        <p>💰 收盤價：{{ stock.close }}</p>
+
+        <p>📈 昨日最高：{{ stock.high }}</p>
+
+        <p>📊 OSC：{{ "%.3f"|format(stock.osc) }}</p>
+
+        <p>✅ 收盤突破昨日高點</p>
+
+        <p>✅ OSC 持續上升</p>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+
+</html>

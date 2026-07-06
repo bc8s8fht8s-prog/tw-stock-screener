@@ -28,3 +28,11 @@ EXCLUDE_ETN = True
 EXCLUDE_WARRANT = True
 EXCLUDE_PREFERRED = True
 EXCLUDE_EMERGING = True
+
+# ===== Development =====
+TEST_MODE = False
+
+TEST_LIMIT = 10
+
+# 正式掃描時使用
+FULL_SCAN_DELAY = 0

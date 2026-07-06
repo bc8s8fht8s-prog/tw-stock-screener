@@ -1,6 +1,16 @@
+from exporter import save_result
 from scanner import scan_market
 
-results = scan_market(limit=10)
+from config import TEST_MODE, TEST_LIMIT
+
+if TEST_MODE:
+    results = scan_market(limit=TEST_LIMIT)
+else:
+    scan_data = scan_market(...)
+    results = scan_data["results"]
+    scan_count = scan_data["scan_count"]
+
+print(results)  
 
 print()
 print("=" * 40)
@@ -19,3 +29,5 @@ else:
 
 print()
 print("共", len(results), "檔")
+
+save_result(results, scan_count)

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>台股每日選股</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📈 台股每日選股</h1>
+
+    <div class="info">
+
+        <p><strong>更新時間</strong></p>
+
+        <p>{{ data.update_time }}</p>
+
+        <p><strong>符合條件</strong></p>
+
+        <p>{{ data.count }} 檔</p>
+
+    </div>
+
+    {% for stock in data.stocks %}
+
+    <div class="card">
+
+        <h2>{{ stock.code }} {{ stock.name }}</h2>
+
+        <p>收盤價：{{ stock.close }}</p>
+
+        <p>昨日最高：{{ stock.high }}</p>
+
+        <p>OSC：{{ "%.3f"|format(stock.osc) }}</p>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+
+</html>

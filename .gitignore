@@ -1,5 +1,16 @@
-.venv/
+# Python
 __pycache__/
 *.pyc
+
+# Virtual Environment
+.venv/
+
+# Logs
+logs/
+*.log
+
+# Runtime Data
+data/
+
+# macOS
 .DS_Store
-.vscode/

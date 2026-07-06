@@ -3,12 +3,13 @@ import os
 from datetime import datetime
 
 
-def save_result(results):
+def save_result(results, scan_count):
 
     os.makedirs("data", exist_ok=True)
 
     output = {
         "update_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "scan_count": scan_count,
         "count": len(results),
         "stocks": results
     }
@@ -18,7 +19,6 @@ def save_result(results):
         "w",
         encoding="utf-8"
     ) as f:
-
         json.dump(
             output,
             f,

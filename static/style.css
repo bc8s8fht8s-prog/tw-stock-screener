@@ -1,51 +1,117 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <title>台股每日選股</title>
+.container {
+    max-width: 820px;
+    margin: auto;
+}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+h1 {
+    text-align: center;
+    color: #1565c0;
+    margin-bottom: 20px;
+}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+.info {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
 
-<body>
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #eeeeee;
+}
 
-<div class="container">
+.info-row:last-child {
+    border-bottom: none;
+}
 
-    <h1>📈 台股每日選股</h1>
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
 
-    <div class="info">
+.card h2 {
+    margin-top: 0;
+    color: #1565c0;
+}
 
-        <p><strong>更新時間</strong></p>
+.card p {
+    margin: 8px 0;
+}
 
-        <p>{{ data.update_time }}</p>
+.osc-up {
+    color: #2e7d32;
+    font-weight: bold;
+}
 
-        <p><strong>符合條件</strong></p>
+.osc-down {
+    color: #d32f2f;
+    font-weight: bold;
+}
 
-        <p>{{ data.count }} 檔</p>
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 30px 0;
+}
 
-    </div>
+.pagination a,
+.pagination span {
+    min-width: 42px;
+    text-align: center;
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-    {% for stock in data.stocks %}
+.pagination a {
+    background: white;
+    color: #1565c0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
 
-    <div class="card">
+.pagination a:hover {
+    background: #1565c0;
+    color: white;
+}
 
-        <h2>{{ stock.code }} {{ stock.name }}</h2>
+.pagination .current {
+    background: #1565c0;
+    color: white;
+}
 
-        <p>收盤價：{{ stock.close }}</p>
+@media (max-width: 600px) {
 
-        <p>昨日最高：{{ stock.high }}</p>
+    body {
+        padding: 12px;
+    }
 
-        <p>OSC：{{ "%.3f"|format(stock.osc) }}</p>
+    .card {
+        padding: 14px;
+    }
 
-    </div>
+    .pagination a,
+    .pagination span {
+        min-width: 36px;
+        padding: 8px 10px;
+        font-size: 14px;
+    }
 
-    {% endfor %}
-
-</div>
-
-</body>
-
-</html>
+}

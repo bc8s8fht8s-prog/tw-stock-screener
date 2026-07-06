@@ -27,14 +27,16 @@ def scan_market(limit=None):
 
         code = row["code"]
         name = row["name"]
+        market = row["market"]
+        industry = row["industry"]
 
         progress = f"[{index + 1:4d}/{total}]"
 
-        print(f"{progress} {code} {name}")
+        print(f"{progress} {code} {name} ({market})")
 
         try:
 
-            df = download_stock_history(code)
+            df = download_stock_history(code, market)
 
             df = calculate_macd(df)
 
@@ -45,6 +47,8 @@ def scan_market(limit=None):
                 results.append({
                     "code": code,
                     "name": name,
+                    "market": market,
+                    "industry": industry,
                     "close": result["close"],
                     "high": result["high"],
                     "osc": result["osc"],
@@ -72,6 +76,6 @@ def scan_market(limit=None):
     print("==============================")
 
     return {
-    "scan_count": total,
-    "results": results
-}
+        "scan_count": total,
+        "results": results
+    }

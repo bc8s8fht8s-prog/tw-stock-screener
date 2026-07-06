@@ -30,31 +30,86 @@
         </div>
 
         <div class="info-row">
+            <span>📊 掃描股票</span>
+            <span>{{ data.scan_count }} 檔</span>
+        </div>
+
+        <div class="info-row">
             <span>🎯 符合條件</span>
             <span>{{ data.count }} 檔</span>
         </div>
 
+        <div class="info-row">
+            <span>📄 目前頁數</span>
+            <span>第 {{ page }} / {{ total_pages }} 頁</span>
+        </div>
+
+        <div class="info-row">
+            <span>📋 顯示範圍</span>
+            <span>{{ start }} ~ {{ end }}</span>
+        </div>
+
     </div>
 
-    {% for stock in data.stocks %}
+    {% if stocks|length == 0 %}
 
     <div class="card">
-
-        <h2>{{ stock.code }} {{ stock.name }}</h2>
-
-        <p>💰 收盤價：{{ stock.close }}</p>
-
-        <p>📈 昨日最高：{{ stock.high }}</p>
-
-        <p>📊 OSC：{{ "%.3f"|format(stock.osc) }}</p>
-
-        <p>✅ 收盤突破昨日高點</p>
-
-        <p>✅ OSC 持續上升</p>
-
+        <h2>📭 今日沒有符合條件股票</h2>
     </div>
 
-    {% endfor %}
+    {% else %}
+
+        {% for stock in stocks %}
+
+        <div class="card">
+
+            <h2>{{ stock.code }} {{ stock.name }}</h2>
+
+            <p>💰 收盤價：{{ "%.2f"|format(stock.close) }}</p>
+
+            <p>📈 昨日最高：{{ "%.2f"|format(stock.high) }}</p>
+
+            <p>
+                📊 OSC：
+
+                {% if stock.osc >= 0 %}
+                    <span class="osc-up">{{ "%.3f"|format(stock.osc) }}</span>
+                {% else %}
+                    <span class="osc-down">{{ "%.3f"|format(stock.osc) }}</span>
+                {% endif %}
+            </p>
+
+            <p>✅ 收盤突破昨日高點</p>
+
+            <p>✅ OSC 持續上升</p>
+
+        </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+    <div class="pagination">
+
+        {% if page > 1 %}
+            <a href="/?page={{ page-1 }}">◀ 上一頁</a>
+        {% endif %}
+
+        {% for p in range(1, total_pages + 1) %}
+
+            {% if p == page %}
+                <span class="current">{{ p }}</span>
+            {% else %}
+                <a href="/?page={{ p }}">{{ p }}</a>
+            {% endif %}
+
+        {% endfor %}
+
+        {% if page < total_pages %}
+            <a href="/?page={{ page+1 }}">下一頁 ▶</a>
+        {% endif %}
+
+    </div>
 
 </div>
 

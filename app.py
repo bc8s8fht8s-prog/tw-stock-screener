@@ -3,10 +3,15 @@ from scanner import scan_market
 
 from config import TEST_MODE, TEST_LIMIT
 
+# 執行掃描
 if TEST_MODE:
-    results = scan_market(limit=TEST_LIMIT)
+    scan_data = scan_market(limit=TEST_LIMIT)
 else:
-    results = scan_market()
+    scan_data = scan_market()
+
+# 取得掃描結果
+results = scan_data["results"]
+scan_count = scan_data["scan_count"]
 
 print(results)
 
@@ -23,5 +28,7 @@ else:
 
 print()
 print("共", len(results), "檔")
+print("掃描股票", scan_count, "檔")
 
-save_result(results)
+# 輸出 JSON
+save_result(results, scan_count)

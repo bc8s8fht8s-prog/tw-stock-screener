@@ -4,12 +4,16 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: "10 7 * * 1-5"
+    # 台灣時間 14:30（UTC 06:30），週一至週五
+    - cron: "30 6 * * 1-5"
 
 jobs:
   scan:
 
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
 
     steps:
 
@@ -29,3 +33,16 @@ jobs:
       - name: Run Scanner
         run: |
           python app.py
+
+      - name: Commit result.json
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/result.json
+
+          git diff --cached --quiet || git commit -m "Auto update result.json"
+
+      - name: Push to GitHub
+        run: |
+          git push

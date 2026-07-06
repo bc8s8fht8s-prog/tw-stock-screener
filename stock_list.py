@@ -3,9 +3,23 @@ import requests
 
 TWSE_URL = "https://openapi.twse.com.tw/v1/opendata/t187ap03_L"
 
+
 def get_stock_list():
-    r = requests.get(TWSE_URL, timeout=30)
+
+    headers = {
+        "User-Agent": "Mozilla/5.0"
+    }
+
+    r = requests.get(
+        TWSE_URL,
+        headers=headers,
+        timeout=30
+    )
+
     r.raise_for_status()
+
+    if not r.text.strip():
+        raise Exception("TWSE API 回傳空白內容")
 
     df = pd.DataFrame(r.json())
 
@@ -14,4 +28,8 @@ def get_stock_list():
         "公司簡稱": "name",
     })
 
-    return df[["code", "name"]].sort_values("code").reset_index(drop=True)
+    return (
+        df[["code", "name"]]
+        .sort_values("code")
+        .reset_index(drop=True)
+    )

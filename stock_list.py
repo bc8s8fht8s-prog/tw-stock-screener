@@ -21,6 +21,13 @@ def get_stock_list():
     if not r.text.strip():
         raise Exception("TWSE API 回傳空白內容")
 
+    r.raise_for_status()
+
+    print("HTTP Status:", r.status_code)
+    print("Content-Type:", r.headers.get("Content-Type"))
+    print("Response:")
+    print(r.text[:500])
+
     df = pd.DataFrame(r.json())
 
     df = df.rename(columns={

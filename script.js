@@ -153,24 +153,4 @@ function renderPagination() {
 
 }
 
-    html += `
-        <span style="margin:0 12px;">
-            第 ${currentPage} / ${totalPages} 頁
-        </span>
-    `;
-
-    if (currentPage < totalPages) {
-
-        html += `
-            <button onclick="renderPage(${currentPage + 1})">
-                下一頁 ▶
-            </button>
-        `;
-
-    }
-
-    document.getElementById("pagination").innerHTML = html;
-
-}
-
 loadData();

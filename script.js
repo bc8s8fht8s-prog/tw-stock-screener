@@ -1,26 +1,29 @@
+const pageSize = 50;
+
+let data = {};
+let currentPage = 1;
+
 async function loadData() {
 
     const response = await fetch("data/result.json");
 
-    const data = await response.json();
+    data = await response.json();
 
     document.getElementById("update_time").textContent = data.update_time;
     document.getElementById("scan_count").textContent = data.scan_count;
     document.getElementById("count").textContent = data.count + " 檔";
 
+    renderPage(1);
+
+}
+
+function renderPage(page) {
+
+    currentPage = page;
+
     const stockList = document.getElementById("stock-list");
 
     stockList.innerHTML = "";
-
-    const pageSize = 50;
-
-    let currentPage = 1;
-
-    function renderPage(page){
-
-    stockList.innerHTML = "";
-
-    currentPage = page;
 
     const start = (page - 1) * pageSize;
 
@@ -28,7 +31,7 @@ async function loadData() {
 
     const stocks = data.stocks.slice(start, end);
 
-    stocks.forEach(stock=>{
+    stocks.forEach(stock => {
 
         stockList.innerHTML += `
 
@@ -57,6 +60,28 @@ async function loadData() {
     renderPagination();
 
 }
+
+function renderPagination() {
+
+    const totalPages = Math.ceil(data.stocks.length / pageSize);
+
+    let html = "";
+
+    if (currentPage > 1) {
+
+        html += `<button onclick="renderPage(${currentPage - 1})">◀ 上一頁</button>`;
+
+    }
+
+    html += `&nbsp;&nbsp;第 ${currentPage} / ${totalPages} 頁&nbsp;&nbsp;`;
+
+    if (currentPage < totalPages) {
+
+        html += `<button onclick="renderPage(${currentPage + 1})">下一頁 ▶</button>`;
+
+    }
+
+    document.getElementById("pagination").innerHTML = html;
 
 }
 

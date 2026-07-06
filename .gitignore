@@ -10,7 +10,8 @@ logs/
 *.log
 
 # Runtime Data
-data/
+data/*
+!data/result.json
 
 # macOS
 .DS_Store

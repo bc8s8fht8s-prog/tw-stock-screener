@@ -12,9 +12,26 @@ async function loadData() {
 
     stockList.innerHTML = "";
 
-    data.stocks.forEach(stock => {
+    const pageSize = 50;
+
+    let currentPage = 1;
+
+    function renderPage(page){
+
+    stockList.innerHTML = "";
+
+    currentPage = page;
+
+    const start = (page - 1) * pageSize;
+
+    const end = start + pageSize;
+
+    const stocks = data.stocks.slice(start, end);
+
+    stocks.forEach(stock=>{
 
         stockList.innerHTML += `
+
         <div style="
             border:1px solid #ddd;
             border-radius:10px;
@@ -32,9 +49,14 @@ async function loadData() {
             <p>OSC：${Number(stock.osc).toFixed(3)}</p>
 
         </div>
+
         `;
 
     });
+
+    renderPagination();
+
+}
 
 }
 

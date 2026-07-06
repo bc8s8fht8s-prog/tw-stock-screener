@@ -3,11 +3,19 @@ const pageSize = 50;
 let data = {};
 let currentPage = 1;
 
+// 所有股票
+let allStocks = [];
+
+// 搜尋後股票
+let filteredStocks = [];
+
 async function loadData() {
 
     const response = await fetch("data/result.json");
 
     data = await response.json();
+    allStocks = data.stocks;
+    filteredStocks = [...allStocks];
 
     document.getElementById("update_time").textContent = data.update_time;
     document.getElementById("scan_count").textContent = data.scan_count;
@@ -28,19 +36,43 @@ function renderPage(page) {
     const start = (page - 1) * pageSize;
     const end = start + pageSize;
 
-    const stocks = data.stocks.slice(start, end);
+const stocks = filteredStocks.slice(start, end);
 
-    stocks.forEach(stock => {
+// 搜尋沒有結果
+if (stocks.length === 0) {
 
-        stockList.innerHTML += `
+    stockList.innerHTML = `
+        <div
+            style="
+                text-align: center;
+                color: #888888;
+                font-size: 18px;
+                margin: 40px 0;
+            "
+        >
+            🔍 找不到符合條件的股票
+        </div>
+    `;
 
-        <div style="
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px 0;
-            background: #fff;
-        ">
+    document.getElementById("pagination").innerHTML = "";
+
+    return;
+
+}
+
+stocks.forEach(stock => {
+
+    stockList.innerHTML += `
+
+        <div
+            style="
+                border: 1px solid #dddddd;
+                border-radius: 10px;
+                padding: 15px;
+                margin: 10px 0;
+                background: #ffffff;
+            "
+        >
 
             <h3>${stock.code} ${stock.name}</h3>
 
@@ -66,17 +98,17 @@ function renderPage(page) {
 
         </div>
 
-        `;
+    `;
 
-    });
+});
 
-    renderPagination();
+renderPagination();
 
 }
 
 function renderPagination() {
 
-    const totalPages = Math.ceil(data.stocks.length / pageSize);
+    const totalPages = Math.ceil(filteredStocks.length / pageSize);
 
     let html = "";
 
@@ -201,6 +233,40 @@ function renderPagination() {
             ${html}
         </div>
     `;
+
+}
+
+function searchStocks() {
+
+    const keyword = document
+        .getElementById("search")
+        .value
+        .trim()
+        .toLowerCase();
+
+    if (keyword === "") {
+
+        filteredStocks = [...allStocks];
+
+    } else {
+
+        filteredStocks = allStocks.filter(stock => {
+
+            const code = String(stock.code).toLowerCase();
+            const name = String(stock.name).toLowerCase();
+
+            return (
+                code.includes(keyword) ||
+                name.includes(keyword)
+            );
+
+        });
+
+    }
+
+    currentPage = 1;
+
+    renderPage(1);
 
 }
 

@@ -84,7 +84,18 @@ function renderPagination() {
     if (currentPage > 1) {
 
         html += `
-            <button onclick="renderPage(${currentPage - 1})">
+            <button
+                onclick="renderPage(${currentPage - 1})"
+                style="
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 10px;
+                    border: 1px solid #d0d0d0;
+                    background: white;
+                    font-size: 18px;
+                    cursor: pointer;
+                "
+            >
                 ◀
             </button>
         `;
@@ -117,8 +128,13 @@ function renderPagination() {
             html += `
                 <button
                     style="
+                        width: 42px;
+                        height: 42px;
+                        border-radius: 10px;
+                        border: none;
                         background: #2563eb;
                         color: white;
+                        font-size: 18px;
                         font-weight: bold;
                     "
                 >
@@ -129,7 +145,18 @@ function renderPagination() {
         } else {
 
             html += `
-                <button onclick="renderPage(${i})">
+                <button
+                    onclick="renderPage(${i})"
+                    style="
+                        width: 42px;
+                        height: 42px;
+                        border-radius: 10px;
+                        border: 1px solid #d0d0d0;
+                        background: white;
+                        font-size: 18px;
+                        cursor: pointer;
+                    "
+                >
                     ${i}
                 </button>
             `;
@@ -142,14 +169,38 @@ function renderPagination() {
     if (currentPage < totalPages) {
 
         html += `
-            <button onclick="renderPage(${currentPage + 1})">
+            <button
+                onclick="renderPage(${currentPage + 1})"
+                style="
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 10px;
+                    border: 1px solid #d0d0d0;
+                    background: white;
+                    font-size: 18px;
+                    cursor: pointer;
+                "
+            >
                 ▶
             </button>
         `;
 
     }
 
-    document.getElementById("pagination").innerHTML = html;
+    document.getElementById("pagination").innerHTML = `
+        <div
+            style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                margin: 25px 0;
+                flex-wrap: wrap;
+            "
+        >
+            ${html}
+        </div>
+    `;
 
 }
 

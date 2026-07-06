@@ -26,7 +26,6 @@ function renderPage(page) {
     stockList.innerHTML = "";
 
     const start = (page - 1) * pageSize;
-
     const end = start + pageSize;
 
     const stocks = data.stocks.slice(start, end);
@@ -36,30 +35,35 @@ function renderPage(page) {
         stockList.innerHTML += `
 
         <div style="
-            border:1px solid #ddd;
-            border-radius:10px;
-            padding:15px;
-            margin:10px 0;
-            background:#fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            background: #fff;
         ">
 
             <h3>${stock.code} ${stock.name}</h3>
 
-            <p>收盤價：${Number(stock.close).toFixed(2)}</p>
-
-            <p>昨日最高：${Number(stock.high).toFixed(2)}</p>
+            <p>
+                收盤價：${Number(stock.close).toFixed(2)}
+            </p>
 
             <p>
-    ${stock.osc >= 0 ? "📈" : "📉"} OSC：
-    <span
-        style="
-            color: ${stock.osc >= 0 ? '#d32f2f' : '#2e7d32'};
-            font-weight: bold;
-        "
-    >
-        ${Number(stock.osc).toFixed(3)}
-    </span>
-</p>
+                昨日最高：${Number(stock.high).toFixed(2)}
+            </p>
+
+            <p>
+                OSC：
+                <span
+                    style="
+                        color: ${stock.osc >= 0 ? "#d32f2f" : "#2e7d32"};
+                        font-weight: bold;
+                    "
+                >
+                    ${Number(stock.osc).toFixed(3)}
+                </span>
+            </p>
+
         </div>
 
         `;
@@ -78,15 +82,27 @@ function renderPagination() {
 
     if (currentPage > 1) {
 
-        html += `<button onclick="renderPage(${currentPage - 1})">◀ 上一頁</button>`;
+        html += `
+            <button onclick="renderPage(${currentPage - 1})">
+                ◀ 上一頁
+            </button>
+        `;
 
     }
 
-    html += `&nbsp;&nbsp;第 ${currentPage} / ${totalPages} 頁&nbsp;&nbsp;`;
+    html += `
+        <span style="margin:0 12px;">
+            第 ${currentPage} / ${totalPages} 頁
+        </span>
+    `;
 
     if (currentPage < totalPages) {
 
-        html += `<button onclick="renderPage(${currentPage + 1})">下一頁 ▶</button>`;
+        html += `
+            <button onclick="renderPage(${currentPage + 1})">
+                下一頁 ▶
+            </button>
+        `;
 
     }
 

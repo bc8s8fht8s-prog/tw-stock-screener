@@ -80,15 +80,78 @@ function renderPagination() {
 
     let html = "";
 
+    // 上一頁
     if (currentPage > 1) {
 
         html += `
             <button onclick="renderPage(${currentPage - 1})">
-                ◀ 上一頁
+                ◀
             </button>
         `;
 
     }
+
+    // 要顯示的頁碼範圍
+    let startPage = Math.max(1, currentPage - 2);
+    let endPage = Math.min(totalPages, currentPage + 2);
+
+    // 如果靠近開頭
+    if (currentPage <= 3) {
+
+        endPage = Math.min(5, totalPages);
+
+    }
+
+    // 如果靠近結尾
+    if (currentPage >= totalPages - 2) {
+
+        startPage = Math.max(1, totalPages - 4);
+
+    }
+
+    // 頁碼按鈕
+    for (let i = startPage; i <= endPage; i++) {
+
+        if (i === currentPage) {
+
+            html += `
+                <button
+                    style="
+                        background: #2563eb;
+                        color: white;
+                        font-weight: bold;
+                    "
+                >
+                    ${i}
+                </button>
+            `;
+
+        } else {
+
+            html += `
+                <button onclick="renderPage(${i})">
+                    ${i}
+                </button>
+            `;
+
+        }
+
+    }
+
+    // 下一頁
+    if (currentPage < totalPages) {
+
+        html += `
+            <button onclick="renderPage(${currentPage + 1})">
+                ▶
+            </button>
+        `;
+
+    }
+
+    document.getElementById("pagination").innerHTML = html;
+
+}
 
     html += `
         <span style="margin:0 12px;">

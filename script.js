@@ -14,6 +14,7 @@ async function loadData() {
     const response = await fetch("data/result.json");
 
     data = await response.json();
+
     allStocks = data.stocks;
     filteredStocks = [...allStocks];
 
@@ -36,73 +37,55 @@ function renderPage(page) {
     const start = (page - 1) * pageSize;
     const end = start + pageSize;
 
-const stocks = filteredStocks.slice(start, end);
+    const stocks = filteredStocks.slice(start, end);
 
-// 搜尋沒有結果
-if (stocks.length === 0) {
+    // 沒有搜尋結果
+    if (stocks.length === 0) {
 
-    stockList.innerHTML = `
-        <div
-            style="
-                text-align: center;
-                color: #888888;
-                font-size: 18px;
-                margin: 40px 0;
-            "
-        >
-            🔍 找不到符合條件的股票
-        </div>
-    `;
+        stockList.innerHTML = `
+            <div class="no-result">
+                🔍 找不到符合條件的股票
+            </div>
+        `;
 
-    document.getElementById("pagination").innerHTML = "";
+        document.getElementById("pagination").innerHTML = "";
 
-    return;
+        return;
 
-}
+    }
 
-stocks.forEach(stock => {
+    stocks.forEach(stock => {
 
-    stockList.innerHTML += `
+        stockList.innerHTML += `
 
-        <div
-            style="
-                border: 1px solid #dddddd;
-                border-radius: 10px;
-                padding: 15px;
-                margin: 10px 0;
-                background: #ffffff;
-            "
-        >
+            <div class="stock-card">
 
-            <h3>${stock.code} ${stock.name}</h3>
+                <h3>${stock.code} ${stock.name}</h3>
 
-            <p>
-                收盤價：${Number(stock.close).toFixed(2)}
-            </p>
+                <p>
+                    收盤價：
+                    <strong>${Number(stock.close).toFixed(2)}</strong>
+                </p>
 
-            <p>
-                昨日最高：${Number(stock.high).toFixed(2)}
-            </p>
+                <p>
+                    昨日最高：
+                    <strong>${Number(stock.high).toFixed(2)}</strong>
+                </p>
 
-            <p>
-                OSC：
-                <span
-                    style="
-                        color: ${stock.osc >= 0 ? "#d32f2f" : "#2e7d32"};
-                        font-weight: bold;
-                    "
-                >
-                    ${Number(stock.osc).toFixed(3)}
-                </span>
-            </p>
+                <p>
+                    OSC：
+                    <span class="${stock.osc >= 0 ? "osc-up" : "osc-down"}">
+                        ${Number(stock.osc).toFixed(3)}
+                    </span>
+                </p>
 
-        </div>
+            </div>
 
-    `;
+        `;
 
-});
+    });
 
-renderPagination();
+    renderPagination();
 
 }
 
@@ -116,60 +99,31 @@ function renderPagination() {
     if (currentPage > 1) {
 
         html += `
-            <button
-                onclick="renderPage(${currentPage - 1})"
-                style="
-                    width: 42px;
-                    height: 42px;
-                    border-radius: 10px;
-                    border: 1px solid #d0d0d0;
-                    background: white;
-                    font-size: 18px;
-                    cursor: pointer;
-                "
-            >
+            <button class="page-btn"
+                onclick="renderPage(${currentPage - 1})">
                 ◀
             </button>
         `;
 
     }
 
-    // 要顯示的頁碼範圍
     let startPage = Math.max(1, currentPage - 2);
     let endPage = Math.min(totalPages, currentPage + 2);
 
-    // 如果靠近開頭
     if (currentPage <= 3) {
-
         endPage = Math.min(5, totalPages);
-
     }
 
-    // 如果靠近結尾
     if (currentPage >= totalPages - 2) {
-
         startPage = Math.max(1, totalPages - 4);
-
     }
 
-    // 頁碼按鈕
     for (let i = startPage; i <= endPage; i++) {
 
         if (i === currentPage) {
 
             html += `
-                <button
-                    style="
-                        width: 42px;
-                        height: 42px;
-                        border-radius: 10px;
-                        border: none;
-                        background: #2563eb;
-                        color: white;
-                        font-size: 18px;
-                        font-weight: bold;
-                    "
-                >
+                <button class="page-btn active">
                     ${i}
                 </button>
             `;
@@ -178,17 +132,8 @@ function renderPagination() {
 
             html += `
                 <button
-                    onclick="renderPage(${i})"
-                    style="
-                        width: 42px;
-                        height: 42px;
-                        border-radius: 10px;
-                        border: 1px solid #d0d0d0;
-                        background: white;
-                        font-size: 18px;
-                        cursor: pointer;
-                    "
-                >
+                    class="page-btn"
+                    onclick="renderPage(${i})">
                     ${i}
                 </button>
             `;
@@ -201,18 +146,8 @@ function renderPagination() {
     if (currentPage < totalPages) {
 
         html += `
-            <button
-                onclick="renderPage(${currentPage + 1})"
-                style="
-                    width: 42px;
-                    height: 42px;
-                    border-radius: 10px;
-                    border: 1px solid #d0d0d0;
-                    background: white;
-                    font-size: 18px;
-                    cursor: pointer;
-                "
-            >
+            <button class="page-btn"
+                onclick="renderPage(${currentPage + 1})">
                 ▶
             </button>
         `;
@@ -220,16 +155,7 @@ function renderPagination() {
     }
 
     document.getElementById("pagination").innerHTML = `
-        <div
-            style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-                margin: 25px 0;
-                flex-wrap: wrap;
-            "
-        >
+        <div class="pagination">
             ${html}
         </div>
     `;
@@ -263,8 +189,6 @@ function searchStocks() {
         });
 
     }
-
-    currentPage = 1;
 
     renderPage(1);
 

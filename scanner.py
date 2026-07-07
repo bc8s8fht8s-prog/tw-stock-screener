@@ -2,7 +2,7 @@ import time
 
 from stock_list import get_stock_list
 from data_loader import download_stock_history
-from indicators import calculate_macd
+from indicators import calculate_macd, calculate_month_macd
 from screener import check_strategy
 
 
@@ -38,9 +38,13 @@ def scan_market(limit=None):
 
             df = download_stock_history(code, market)
 
-            df = calculate_macd(df)
+            # 日K MACD
+            day_df = calculate_macd(df)
 
-            result = check_strategy(df)
+            # 月K MACD
+            month_df = calculate_month_macd(df)
+
+            result = check_strategy(day_df, month_df)
 
             if result and result["pass"]:
 

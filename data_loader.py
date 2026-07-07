@@ -5,7 +5,7 @@ from logger import log
 
 def download_stock_history(stock_id: str, market: str) -> pd.DataFrame:
     """
-    下載股票最近六個月歷史資料
+    下載股票完整歷史資料
 
     上市：2330.TW
     上櫃：5483.TWO
@@ -22,7 +22,7 @@ def download_stock_history(stock_id: str, market: str) -> pd.DataFrame:
 
     df = yf.download(
         symbol,
-        period="6mo",
+        period="max",          # ← 原本 6mo，改成 max
         auto_adjust=False,
         progress=False,
     )

@@ -37,7 +37,9 @@ h1 {
     border-bottom: none;
 }
 
-.card {
+/* ===== 股票卡 ===== */
+
+.stock-card {
     background: #1e1e1e;
     border-radius: 12px;
     padding: 18px;
@@ -46,13 +48,18 @@ h1 {
     box-shadow: 0 2px 10px rgba(0,0,0,.35);
 }
 
-.card h2 {
+.stock-card h3 {
     margin-top: 0;
+    margin-bottom: 12px;
     color: #ffffff;
 }
 
-.card p {
+.stock-card p {
     margin: 8px 0;
+    color: #ffffff;
+}
+
+.stock-card strong {
     color: #ffffff;
 }
 
@@ -66,6 +73,18 @@ h1 {
     font-weight: bold;
 }
 
+/* ===== 沒有搜尋結果 ===== */
+
+.no-result {
+    text-align: center;
+    padding: 30px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    border: 1px solid #333333;
+}
+
+/* ===== 分頁 ===== */
+
 .pagination {
     display: flex;
     justify-content: center;
@@ -75,31 +94,28 @@ h1 {
     margin: 30px 0;
 }
 
-.pagination a,
-.pagination span {
+.page-btn {
     min-width: 42px;
-    text-align: center;
     padding: 10px 14px;
     border-radius: 10px;
-    text-decoration: none;
+    border: 1px solid #333333;
+    background: #1e1e1e;
+    color: #64b5f6;
+    cursor: pointer;
     font-weight: bold;
 }
 
-.pagination a {
-    background: #1e1e1e;
-    color: #64b5f6;
-    border: 1px solid #333333;
-}
-
-.pagination a:hover {
+.page-btn:hover {
     background: #64b5f6;
     color: #121212;
 }
 
-.pagination .current {
+.page-btn.active {
     background: #64b5f6;
     color: #121212;
 }
+
+/* ===== 手機 ===== */
 
 @media (max-width: 600px) {
 
@@ -107,12 +123,11 @@ h1 {
         padding: 12px;
     }
 
-    .card {
+    .stock-card {
         padding: 14px;
     }
 
-    .pagination a,
-    .pagination span {
+    .page-btn {
         min-width: 36px;
         padding: 8px 10px;
         font-size: 14px;

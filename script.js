@@ -56,13 +56,21 @@ function renderPage(page) {
 
     stocks.forEach(stock => {
 
-        let changeClass = "";
+        const close = Number(stock.close).toFixed(2);
+        const high = Number(stock.high).toFixed(2);
 
-        if (stock.change_percent > 0) {
-            changeClass = "osc-up";
-        } else if (stock.change_percent < 0) {
-            changeClass = "osc-down";
-        }
+        const change =
+            stock.change_percent != null
+                ? Number(stock.change_percent).toFixed(2)
+                : "--";
+
+        const osc =
+            stock.osc != null
+                ? Number(stock.osc).toFixed(3)
+                : "--";
+
+        const oscClass =
+            stock.osc >= 0 ? "osc-up" : "osc-down";
 
         stockList.innerHTML += `
 
@@ -72,25 +80,23 @@ function renderPage(page) {
 
                 <p>
                     收盤價：
-                    <strong>${Number(stock.close).toFixed(2)}</strong>
+                    <strong>${close}</strong>
                 </p>
 
                 <p>
                     昨日最高：
-                    <strong>${Number(stock.high).toFixed(2)}</strong>
+                    <strong>${high}</strong>
                 </p>
 
                 <p>
                     漲跌幅：
-                    <span class="${changeClass}">
-                        ${Number(stock.change_percent).toFixed(2)}%
-                    </span>
+                    <span>${change}%</span>
                 </p>
 
                 <p>
                     OSC：
-                    <span class="${stock.osc >= 0 ? "osc-up" : "osc-down"}">
-                        ${Number(stock.osc).toFixed(3)}
+                    <span class="${oscClass}">
+                        ${osc}
                     </span>
                 </p>
 

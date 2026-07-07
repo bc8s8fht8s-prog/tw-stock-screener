@@ -56,6 +56,14 @@ function renderPage(page) {
 
     stocks.forEach(stock => {
 
+        let changeClass = "";
+
+        if (stock.change_percent > 0) {
+            changeClass = "osc-up";
+        } else if (stock.change_percent < 0) {
+            changeClass = "osc-down";
+        }
+
         stockList.innerHTML += `
 
             <div class="stock-card">
@@ -70,6 +78,13 @@ function renderPage(page) {
                 <p>
                     昨日最高：
                     <strong>${Number(stock.high).toFixed(2)}</strong>
+                </p>
+
+                <p>
+                    漲跌幅：
+                    <span class="${changeClass}">
+                        ${Number(stock.change_percent).toFixed(2)}%
+                    </span>
                 </p>
 
                 <p>

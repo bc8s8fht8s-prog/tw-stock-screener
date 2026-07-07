@@ -1,5 +1,5 @@
 {
-    "update_time": "2026-07-07 19:48:13",
+    "update_time": "2026-07-07 19:57:09",
     "scan_count": 1925,
     "count": 104,
     "stocks": [
@@ -10,6 +10,7 @@
             "industry": "食品工業",
             "close": 28.5,
             "high": 28.3,
+            "change_percent": 1.24,
             "osc": 0.0667,
             "osc_prev": 0.0562
         },
@@ -20,6 +21,7 @@
             "industry": "觀光餐旅",
             "close": 57.8,
             "high": 57.0,
+            "change_percent": 2.48,
             "osc": -0.0421,
             "osc_prev": -0.1441
         },
@@ -30,6 +32,7 @@
             "industry": "紡織纖維",
             "close": 27.0,
             "high": 26.45,
+            "change_percent": 3.05,
             "osc": 0.326,
             "osc_prev": 0.2688
         },
@@ -40,6 +43,7 @@
             "industry": "紡織纖維",
             "close": 17.8,
             "high": 17.75,
+            "change_percent": 0.28,
             "osc": 0.0541,
             "osc_prev": 0.0478
         },
@@ -50,6 +54,7 @@
             "industry": "紡織纖維",
             "close": 19.4,
             "high": 18.9,
+            "change_percent": 6.01,
             "osc": 0.581,
             "osc_prev": 0.5137
         },
@@ -60,6 +65,7 @@
             "industry": "紡織纖維",
             "close": 340.5,
             "high": 330.5,
+            "change_percent": 5.42,
             "osc": 1.4088,
             "osc_prev": -0.1868
         },
@@ -70,6 +76,7 @@
             "industry": "電器電纜",
             "close": 45.7,
             "high": 45.65,
+            "change_percent": 0.33,
             "osc": 0.0769,
             "osc_prev": 0.0406
         },
@@ -80,6 +87,7 @@
             "industry": "生技醫療業",
             "close": 74.6,
             "high": 74.1,
+            "change_percent": 1.08,
             "osc": 0.258,
             "osc_prev": 0.1328
         },
@@ -90,6 +98,7 @@
             "industry": "生技醫療業",
             "close": 40.65,
             "high": 40.6,
+            "change_percent": 0.12,
             "osc": 0.2515,
             "osc_prev": 0.2081
         },
@@ -100,6 +109,7 @@
             "industry": "食品工業",
             "close": 34.75,
             "high": 32.35,
+            "change_percent": 9.97,
             "osc": 0.1675,
             "osc_prev": -0.0461
         },
@@ -110,6 +120,7 @@
             "industry": "電子零組件業",
             "close": 8260.0,
             "high": 8000.0,
+            "change_percent": 6.1,
             "osc": 23.2803,
             "osc_prev": 7.4004
         },
@@ -120,6 +131,7 @@
             "industry": "鋼鐵工業",
             "close": 24.2,
             "high": 24.15,
+            "change_percent": 0.21,
             "osc": -0.0014,
             "osc_prev": -0.0201
         },
@@ -130,6 +142,7 @@
             "industry": "鋼鐵工業",
             "close": 27.0,
             "high": 26.25,
+            "change_percent": 3.25,
             "osc": 0.0389,
             "osc_prev": -0.0101
         },
@@ -140,6 +153,7 @@
             "industry": "其他業",
             "close": 49.6,
             "high": 49.5,
+            "change_percent": 2.06,
             "osc": -0.0541,
             "osc_prev": -0.1082
         },
@@ -150,6 +164,7 @@
             "industry": "半導體業",
             "close": 188.0,
             "high": 184.0,
+            "change_percent": 5.03,
             "osc": 1.1614,
             "osc_prev": 1.1169
         },
@@ -160,6 +175,7 @@
             "industry": "貿易百貨業",
             "close": 6.87,
             "high": 6.6,
+            "change_percent": 4.09,
             "osc": 0.1072,
             "osc_prev": 0.0524
         },
@@ -170,6 +186,7 @@
             "industry": "航運業",
             "close": 79.0,
             "high": 78.9,
+            "change_percent": 0.77,
             "osc": 0.1496,
             "osc_prev": -0.1782
         },
@@ -180,6 +197,7 @@
             "industry": "其他業",
             "close": 11.8,
             "high": 11.75,
+            "change_percent": 2.61,
             "osc": 0.0413,
             "osc_prev": 0.0274
         },
@@ -190,6 +208,7 @@
             "industry": "金融保險業",
             "close": 24.5,
             "high": 23.65,
+            "change_percent": 3.81,
             "osc": 0.1178,
             "osc_prev": 0.0411
         },
@@ -200,6 +219,7 @@
             "industry": "金融保險業",
             "close": 38.95,
             "high": 38.5,
+            "change_percent": 1.83,
             "osc": -0.0101,
             "osc_prev": -0.08
         },
@@ -210,6 +230,7 @@
             "industry": "金融保險業",
             "close": 97.0,
             "high": 94.9,
+            "change_percent": 3.85,
             "osc": -2.5352,
             "osc_prev": -2.8673
         },
@@ -220,6 +241,7 @@
             "industry": "金融保險業",
             "close": 30.1,
             "high": 29.1,
+            "change_percent": 3.79,
             "osc": -0.3084,
             "osc_prev": -0.4066
         },
@@ -230,6 +252,7 @@
             "industry": "金融保險業",
             "close": 34.5,
             "high": 34.45,
+            "change_percent": 0.15,
             "osc": -0.1731,
             "osc_prev": -0.2139
         },
@@ -240,6 +263,7 @@
             "industry": "金融保險業",
             "close": 69.8,
             "high": 68.7,
+            "change_percent": 2.05,
             "osc": -0.1356,
             "osc_prev": -0.2918
         },
@@ -250,6 +274,7 @@
             "industry": "金融保險業",
             "close": 46.8,
             "high": 46.6,
+            "change_percent": 1.08,
             "osc": -0.0405,
             "osc_prev": -0.0585
         },
@@ -260,6 +285,7 @@
             "industry": "金融保險業",
             "close": 34.9,
             "high": 34.8,
+            "change_percent": 1.75,
             "osc": 0.0359,
             "osc_prev": 0.0108
         },
@@ -270,6 +296,7 @@
             "industry": "金融保險業",
             "close": 15.3,
             "high": 15.25,
+            "change_percent": 0.66,
             "osc": 0.0225,
             "osc_prev": 0.0028
         },
@@ -280,6 +307,7 @@
             "industry": "金融保險業",
             "close": 33.3,
             "high": 33.1,
+            "change_percent": 0.76,
             "osc": -0.0284,
             "osc_prev": -0.0406
         },
@@ -290,6 +318,7 @@
             "industry": "電腦及週邊設備業",
             "close": 58.4,
             "high": 53.4,
+            "change_percent": 9.98,
             "osc": 0.0164,
             "osc_prev": -0.4722
         },
@@ -300,6 +329,7 @@
             "industry": "電子通路業",
             "close": 176.0,
             "high": 163.0,
+            "change_percent": 9.66,
             "osc": 8.5784,
             "osc_prev": 7.3955
         },
@@ -310,6 +340,7 @@
             "industry": "光電業",
             "close": 30.2,
             "high": 29.15,
+            "change_percent": 3.6,
             "osc": 0.7043,
             "osc_prev": 0.5372
         },
@@ -320,6 +351,7 @@
             "industry": "生技醫療業",
             "close": 38.25,
             "high": 38.2,
+            "change_percent": 3.24,
             "osc": 0.5117,
             "osc_prev": 0.3532
         },
@@ -330,6 +362,7 @@
             "industry": "半導體業",
             "close": 344.0,
             "high": 331.5,
+            "change_percent": 5.68,
             "osc": 2.6598,
             "osc_prev": 1.7218
         },
@@ -340,6 +373,7 @@
             "industry": "電子零組件業",
             "close": 28.15,
             "high": 28.05,
+            "change_percent": 0.36,
             "osc": 0.2841,
             "osc_prev": 0.1518
         },
@@ -350,6 +384,7 @@
             "industry": "電子零組件業",
             "close": 28.9,
             "high": 28.5,
+            "change_percent": 1.94,
             "osc": 0.2044,
             "osc_prev": 0.1095
         },
@@ -360,6 +395,7 @@
             "industry": "電腦及週邊設備業",
             "close": 18.65,
             "high": 18.4,
+            "change_percent": 1.36,
             "osc": 0.2633,
             "osc_prev": 0.1806
         },
@@ -370,6 +406,7 @@
             "industry": "通信網路業",
             "close": 8.57,
             "high": 7.84,
+            "change_percent": 9.87,
             "osc": 0.0377,
             "osc_prev": -0.0112
         },
@@ -380,6 +417,7 @@
             "industry": "通信網路業",
             "close": 14.35,
             "high": 13.65,
+            "change_percent": 5.13,
             "osc": 0.1972,
             "osc_prev": 0.1141
         },
@@ -390,6 +428,7 @@
             "industry": "生技醫療業",
             "close": 32.85,
             "high": 32.75,
+            "change_percent": 0.61,
             "osc": 0.2141,
             "osc_prev": 0.1696
         },
@@ -400,6 +439,7 @@
             "industry": "生技醫療業",
             "close": 48.2,
             "high": 46.4,
+            "change_percent": 4.56,
             "osc": 0.2298,
             "osc_prev": 0.0675
         },
@@ -410,6 +450,7 @@
             "industry": "生技醫療業",
             "close": 43.75,
             "high": 41.2,
+            "change_percent": 7.89,
             "osc": 0.3979,
             "osc_prev": 0.1848
         },
@@ -420,6 +461,7 @@
             "industry": "生技醫療業",
             "close": 135.0,
             "high": 133.0,
+            "change_percent": 8.0,
             "osc": 0.6391,
             "osc_prev": 0.1614
         },
@@ -430,6 +472,7 @@
             "industry": "生技醫療業",
             "close": 27.2,
             "high": 26.25,
+            "change_percent": 5.02,
             "osc": 0.1746,
             "osc_prev": 0.0847
         },
@@ -440,6 +483,7 @@
             "industry": "生技醫療業",
             "close": 26.1,
             "high": 26.05,
+            "change_percent": 0.19,
             "osc": 0.2177,
             "osc_prev": 0.1955
         },
@@ -450,6 +494,7 @@
             "industry": "電機機械",
             "close": 17.65,
             "high": 17.2,
+            "change_percent": 6.01,
             "osc": 0.0498,
             "osc_prev": -0.0142
         },
@@ -460,6 +505,7 @@
             "industry": "電機機械",
             "close": 25.55,
             "high": 25.45,
+            "change_percent": 1.79,
             "osc": 0.0784,
             "osc_prev": 0.0272
         },
@@ -470,6 +516,7 @@
             "industry": "電機機械",
             "close": 41.8,
             "high": 41.4,
+            "change_percent": 1.33,
             "osc": 0.0401,
             "osc_prev": 0.0245
         },
@@ -480,6 +527,7 @@
             "industry": "生技醫療業",
             "close": 386.5,
             "high": 377.5,
+            "change_percent": 2.38,
             "osc": 0.8389,
             "osc_prev": 0.3752
         },
@@ -490,6 +538,7 @@
             "industry": "貿易百貨業",
             "close": 39.7,
             "high": 38.5,
+            "change_percent": 4.2,
             "osc": -0.8966,
             "osc_prev": -1.0613
         },
@@ -500,6 +549,7 @@
             "industry": "生技醫療業",
             "close": 33.9,
             "high": 33.65,
+            "change_percent": 1.65,
             "osc": 0.381,
             "osc_prev": 0.329
         },
@@ -510,6 +560,7 @@
             "industry": "資訊服務業",
             "close": 30.8,
             "high": 30.7,
+            "change_percent": 1.82,
             "osc": -0.1337,
             "osc_prev": -0.1927
         },
@@ -520,6 +571,7 @@
             "industry": "文化創意業",
             "close": 101.0,
             "high": 100.0,
+            "change_percent": 2.23,
             "osc": -0.0255,
             "osc_prev": -0.2241
         },
@@ -530,6 +582,7 @@
             "industry": "其他業",
             "close": 19.75,
             "high": 19.5,
+            "change_percent": 1.28,
             "osc": 0.1591,
             "osc_prev": 0.1418
         },
@@ -540,6 +593,7 @@
             "industry": "半導體業",
             "close": 93.1,
             "high": 89.9,
+            "change_percent": 3.56,
             "osc": -0.5475,
             "osc_prev": -1.1073
         },
@@ -550,6 +604,7 @@
             "industry": "通信網路業",
             "close": 83.4,
             "high": 82.9,
+            "change_percent": 2.46,
             "osc": 0.0775,
             "osc_prev": -0.163
         },
@@ -560,6 +615,7 @@
             "industry": "觀光餐旅",
             "close": 13.95,
             "high": 13.75,
+            "change_percent": 1.45,
             "osc": -0.0074,
             "osc_prev": -0.0263
         },
@@ -570,6 +626,7 @@
             "industry": "金融保險業",
             "close": 42.4,
             "high": 42.2,
+            "change_percent": 1.68,
             "osc": -0.1055,
             "osc_prev": -0.1313
         },
@@ -580,6 +637,7 @@
             "industry": "半導體業",
             "close": 34.25,
             "high": 31.1,
+            "change_percent": 10.13,
             "osc": 0.1311,
             "osc_prev": -0.1409
         },
@@ -590,6 +648,7 @@
             "industry": "電子通路業",
             "close": 14.0,
             "high": 13.95,
+            "change_percent": 0.36,
             "osc": -0.0102,
             "osc_prev": -0.0248
         },
@@ -600,6 +659,7 @@
             "industry": "電子零組件業",
             "close": 42.6,
             "high": 40.9,
+            "change_percent": 9.94,
             "osc": 0.2247,
             "osc_prev": 0.1045
         },
@@ -610,6 +670,7 @@
             "industry": "通信網路業",
             "close": 171.0,
             "high": 170.0,
+            "change_percent": 1.79,
             "osc": 0.5752,
             "osc_prev": 0.1573
         },
@@ -620,6 +681,7 @@
             "industry": "電腦及週邊設備業",
             "close": 400.0,
             "high": 391.5,
+            "change_percent": 4.17,
             "osc": 0.4975,
             "osc_prev": -1.1567
         },
@@ -630,6 +692,7 @@
             "industry": "通信網路業",
             "close": 91.0,
             "high": 84.1,
+            "change_percent": 9.9,
             "osc": 0.7333,
             "osc_prev": 0.0807
         },
@@ -640,6 +703,7 @@
             "industry": "生技醫療業",
             "close": 1495.0,
             "high": 1470.0,
+            "change_percent": 3.46,
             "osc": 28.1768,
             "osc_prev": 27.5165
         },
@@ -650,6 +714,7 @@
             "industry": "生技醫療業",
             "close": 24.75,
             "high": 24.2,
+            "change_percent": 2.7,
             "osc": -0.0463,
             "osc_prev": -0.0632
         },
@@ -660,6 +725,7 @@
             "industry": "農業科技業",
             "close": 25.55,
             "high": 24.85,
+            "change_percent": 2.82,
             "osc": 0.1642,
             "osc_prev": 0.1117
         },
@@ -670,6 +736,7 @@
             "industry": "其他電子業",
             "close": 20.3,
             "high": 20.15,
+            "change_percent": 0.74,
             "osc": 0.0353,
             "osc_prev": 0.0306
         },
@@ -680,6 +747,7 @@
             "industry": "半導體業",
             "close": 221.0,
             "high": 201.0,
+            "change_percent": 9.95,
             "osc": 6.106,
             "osc_prev": 4.0523
         },
@@ -690,6 +758,7 @@
             "industry": "生技醫療業",
             "close": 109.0,
             "high": 108.5,
+            "change_percent": 1.4,
             "osc": -0.8582,
             "osc_prev": -1.1636
         },
@@ -700,6 +769,7 @@
             "industry": "生技醫療業",
             "close": 84.9,
             "high": 84.7,
+            "change_percent": 1.68,
             "osc": 0.6098,
             "osc_prev": 0.5015
         },
@@ -710,6 +780,7 @@
             "industry": "電腦及週邊設備業",
             "close": 76.3,
             "high": 75.7,
+            "change_percent": 0.79,
             "osc": 0.1696,
             "osc_prev": 0.0173
         },
@@ -720,6 +791,7 @@
             "industry": "農業科技業",
             "close": 16.65,
             "high": 16.55,
+            "change_percent": 0.91,
             "osc": 0.019,
             "osc_prev": 0.0007
         },
@@ -730,6 +802,7 @@
             "industry": "電腦及週邊設備業",
             "close": 179.0,
             "high": 169.5,
+            "change_percent": 8.81,
             "osc": 0.7148,
             "osc_prev": -0.442
         },
@@ -740,6 +813,7 @@
             "industry": "資訊服務業",
             "close": 68.6,
             "high": 66.4,
+            "change_percent": 3.31,
             "osc": 0.1055,
             "osc_prev": -0.0555
         },
@@ -750,6 +824,7 @@
             "industry": "電機機械",
             "close": 25.2,
             "high": 25.0,
+            "change_percent": 1.0,
             "osc": -0.015,
             "osc_prev": -0.0474
         },
@@ -760,6 +835,7 @@
             "industry": "生技醫療業",
             "close": 79.0,
             "high": 74.4,
+            "change_percent": 6.76,
             "osc": 0.4263,
             "osc_prev": 0.0478
         },
@@ -770,6 +846,7 @@
             "industry": "生技醫療業",
             "close": 111.5,
             "high": 101.5,
+            "change_percent": 9.85,
             "osc": 4.6096,
             "osc_prev": 3.5004
         },
@@ -780,6 +857,7 @@
             "industry": "生技醫療業",
             "close": 177.5,
             "high": 167.5,
+            "change_percent": 9.91,
             "osc": 2.3332,
             "osc_prev": 1.416
         },
@@ -790,6 +868,7 @@
             "industry": "電子零組件業",
             "close": 495.0,
             "high": 489.5,
+            "change_percent": 1.12,
             "osc": 8.6715,
             "osc_prev": 5.6354
         },
@@ -800,6 +879,7 @@
             "industry": "生技醫療業",
             "close": 85.2,
             "high": 84.1,
+            "change_percent": 4.67,
             "osc": 0.5759,
             "osc_prev": 0.2787
         },
@@ -810,6 +890,7 @@
             "industry": "生技醫療業",
             "close": 67.7,
             "high": 67.6,
+            "change_percent": 1.96,
             "osc": 0.6929,
             "osc_prev": 0.4689
         },
@@ -820,6 +901,7 @@
             "industry": "其他電子業",
             "close": 122.0,
             "high": 121.0,
+            "change_percent": 1.24,
             "osc": -0.5898,
             "osc_prev": -0.7522
         },
@@ -830,6 +912,7 @@
             "industry": "生技醫療業",
             "close": 21.95,
             "high": 21.9,
+            "change_percent": 0.92,
             "osc": 0.0217,
             "osc_prev": -0.0269
         },
@@ -840,6 +923,7 @@
             "industry": "其他業",
             "close": 127.0,
             "high": 126.0,
+            "change_percent": 1.6,
             "osc": 0.2222,
             "osc_prev": 0.2122
         },
@@ -850,6 +934,7 @@
             "industry": "生技醫療業",
             "close": 110.0,
             "high": 104.0,
+            "change_percent": 10.0,
             "osc": 0.5389,
             "osc_prev": -0.1393
         },
@@ -860,6 +945,7 @@
             "industry": "綠能環保",
             "close": 80.4,
             "high": 79.2,
+            "change_percent": 1.9,
             "osc": 0.4718,
             "osc_prev": 0.1995
         },
@@ -870,6 +956,7 @@
             "industry": "數位雲端",
             "close": 72.4,
             "high": 72.1,
+            "change_percent": 0.42,
             "osc": -0.2118,
             "osc_prev": -0.2661
         },
@@ -880,6 +967,7 @@
             "industry": "生技醫療業",
             "close": 70.7,
             "high": 70.6,
+            "change_percent": 0.14,
             "osc": -0.1806,
             "osc_prev": -0.2057
         },
@@ -890,6 +978,7 @@
             "industry": "半導體業",
             "close": 43.7,
             "high": 43.3,
+            "change_percent": 1.27,
             "osc": 0.2607,
             "osc_prev": 0.1746
         },
@@ -900,6 +989,7 @@
             "industry": "生技醫療業",
             "close": 466.0,
             "high": 430.0,
+            "change_percent": 8.37,
             "osc": 5.6825,
             "osc_prev": 2.761
         },
@@ -910,6 +1000,7 @@
             "industry": "運動休閒",
             "close": 79.9,
             "high": 79.5,
+            "change_percent": 1.14,
             "osc": 0.218,
             "osc_prev": 0.1196
         },
@@ -920,6 +1011,7 @@
             "industry": "半導體業",
             "close": 352.0,
             "high": 347.5,
+            "change_percent": 6.02,
             "osc": 2.1268,
             "osc_prev": 1.2785
         },
@@ -930,6 +1022,7 @@
             "industry": "電腦及週邊設備業",
             "close": 57.6,
             "high": 57.5,
+            "change_percent": 1.05,
             "osc": 0.0222,
             "osc_prev": -0.1818
         },
@@ -940,6 +1033,7 @@
             "industry": "電子零組件業",
             "close": 33.35,
             "high": 32.25,
+            "change_percent": 7.75,
             "osc": 0.1446,
             "osc_prev": 0.1232
         },
@@ -950,6 +1044,7 @@
             "industry": "觀光餐旅",
             "close": 47.45,
             "high": 47.1,
+            "change_percent": 0.74,
             "osc": -0.5262,
             "osc_prev": -0.578
         },
@@ -960,6 +1055,7 @@
             "industry": "電子零組件業",
             "close": 161.5,
             "high": 154.5,
+            "change_percent": 4.53,
             "osc": 4.0562,
             "osc_prev": 2.8878
         },
@@ -970,6 +1066,7 @@
             "industry": "電腦及週邊設備業",
             "close": 216.5,
             "high": 209.5,
+            "change_percent": 5.35,
             "osc": 1.58,
             "osc_prev": -0.008
         },
@@ -980,6 +1077,7 @@
             "industry": "其他業",
             "close": 12.45,
             "high": 12.4,
+            "change_percent": 0.4,
             "osc": 0.0455,
             "osc_prev": 0.0377
         },
@@ -990,6 +1088,7 @@
             "industry": "其他業",
             "close": 14.25,
             "high": 13.5,
+            "change_percent": 6.34,
             "osc": 0.1077,
             "osc_prev": 0.0399
         },
@@ -1000,6 +1099,7 @@
             "industry": "貿易百貨業",
             "close": 11.5,
             "high": 11.45,
+            "change_percent": 0.44,
             "osc": 0.0137,
             "osc_prev": 0.0135
         },
@@ -1010,6 +1110,7 @@
             "industry": "運動休閒",
             "close": 155.0,
             "high": 151.0,
+            "change_percent": 2.65,
             "osc": 1.588,
             "osc_prev": 1.1494
         },
@@ -1020,6 +1121,7 @@
             "industry": "其他業",
             "close": 42.2,
             "high": 42.1,
+            "change_percent": 0.24,
             "osc": 0.0077,
             "osc_prev": -0.0063
         },
@@ -1030,6 +1132,7 @@
             "industry": "鋼鐵工業",
             "close": 30.0,
             "high": 28.8,
+            "change_percent": 6.19,
             "osc": 0.275,
             "osc_prev": 0.1625
         },
@@ -1040,6 +1143,7 @@
             "industry": "其他業",
             "close": 18.05,
             "high": 18.0,
+            "change_percent": 0.28,
             "osc": 0.0175,
             "osc_prev": 0.0118
         }

@@ -55,6 +55,7 @@ def scan_market(limit=None):
                     "industry": industry,
                     "close": result["close"],
                     "high": result["high"],
+                    "change_percent": result["change_percent"],   # ← 新增這一行
                     "osc": result["osc"],
                     "osc_prev": result["osc_prev"],
                 })

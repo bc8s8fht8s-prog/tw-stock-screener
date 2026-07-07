@@ -1,6 +1,10 @@
 name: Daily TW Stock Scan
 
 on:
+  push:
+    branches:
+      - main
+
   workflow_dispatch:
 
   schedule:
@@ -30,9 +34,12 @@ jobs:
 
       - name: Show Trigger Information
         run: |
+          echo "===================================="
           echo "Event: ${{ github.event_name }}"
           echo "Branch: ${{ github.ref_name }}"
+          echo "UTC Time:"
           date -u
+          echo "===================================="
 
       - name: Run Scanner
         run: |

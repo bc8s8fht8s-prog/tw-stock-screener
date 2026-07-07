@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
   schedule:
-    # 測試：台灣時間 16:55（UTC 08:55），週一至週五
-    - cron: "55 8 * * 1-5"
+    # 測試：台灣時間 17:30（UTC 09:30），週一至週五
+    - cron: "30 9 * * 1-5"
 
 permissions:
   contents: write

@@ -22,7 +22,7 @@ def download_stock_history(stock_id: str, market: str) -> pd.DataFrame:
 
     df = yf.download(
         symbol,
-        period="max",          # ← 原本 6mo，改成 max
+        period="max",
         auto_adjust=False,
         progress=False,
     )
@@ -30,10 +30,19 @@ def download_stock_history(stock_id: str, market: str) -> pd.DataFrame:
     if df.empty:
         raise Exception(f"{stock_id} ({market}) 無資料")
 
+    # 查看原始資料（暫時保留除錯）
+    print("\n========== Raw Data ==========")
+    print(df.tail())
+    print(df.columns)
+    print("==============================\n")
+
     df.reset_index(inplace=True)
 
-    # yfinance 新版可能回傳 MultiIndex 欄位
+    # ⭐ 先把 MultiIndex 攤平成單層欄位
     if isinstance(df.columns, pd.MultiIndex):
         df.columns = [col[0] for col in df.columns]
+
+    # ⭐ 再刪除沒有收盤價的資料
+    df.dropna(subset=["Close"], inplace=True)
 
     return df

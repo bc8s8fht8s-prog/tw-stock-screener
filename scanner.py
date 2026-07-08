@@ -15,7 +15,7 @@ def scan_market(limit=None):
     start_time = time.time()
 
     stocks = get_stock_list()
-
+ 
     if limit:
         stocks = stocks.head(limit)
 
@@ -38,6 +38,9 @@ def scan_market(limit=None):
 
             df = download_stock_history(code, market)
 
+            # ===== 除錯：印出最後三天股價 =====
+            print(df.tail(3)[["Date", "High", "Close"]])
+
             # 日K MACD
             day_df = calculate_macd(df)
 
@@ -46,25 +49,36 @@ def scan_market(limit=None):
 
             result = check_strategy(day_df, month_df)
 
-            if result and result["pass"]:
+            if result:
 
-                results.append({
-                    "code": code,
-                    "name": name,
-                    "market": market,
-                    "industry": industry,
-                    "close": result["close"],
-                    "high": result["high"],
-                    "change_percent": result["change_percent"],   # ← 新增這一行
-                    "osc": result["osc"],
-                    "osc_prev": result["osc_prev"],
-                })
+                if result["pass"]:
 
-                print("    ✅ 符合")
+                    results.append({
+                        "code": code,
+                        "name": name,
+                        "market": market,
+                        "industry": industry,
+                        "close": result["close"],
+                        "high": result["high"],
+                        "change_percent": result["change_percent"],
+                        "osc": result["osc"],
+                        "osc_prev": result["osc_prev"],
+                    })
+
+                    print("    ✅ 符合")
+
+                else:
+
+                    print(
+                        f"    ❌ 不符合 "
+                        f"(C1={result['condition1']}, "
+                        f"C2={result['condition2']}, "
+                        f"C3={result['condition3']})"
+                    )
 
             else:
 
-                print("    ❌ 不符合")
+                print("    ⚠️ 無法判斷")
 
         except Exception as e:
 

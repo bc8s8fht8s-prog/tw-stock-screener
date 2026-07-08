@@ -7,8 +7,8 @@ def check_strategy(day_df: pd.DataFrame, month_df: pd.DataFrame):
     if len(day_df) < 35:
         return None
 
-    # 月K至少需要兩個月才能比較OSC
-    if len(month_df) < 2:
+    # 月K至少需要三個月才能比較前一個月與前前一個月
+    if len(month_df) < 3:
         return None
 
     # ---------- 日K ----------
@@ -23,11 +23,14 @@ def check_strategy(day_df: pd.DataFrame, month_df: pd.DataFrame):
     osc_yesterday = float(yesterday["OSC"])
 
     # ---------- 月K ----------
-    month_now = month_df.iloc[-1]
+    # 前一個已完成月份
     month_prev = month_df.iloc[-2]
 
-    month_osc = float(month_now["OSC"])
-    month_osc_prev = float(month_prev["OSC"])
+    # 前前一個月份
+    month_prev2 = month_df.iloc[-3]
+
+    month_osc = float(month_prev["OSC"])
+    month_osc_prev = float(month_prev2["OSC"])
 
     # ---------- 漲跌幅 ----------
     change_percent = round(
@@ -37,14 +40,20 @@ def check_strategy(day_df: pd.DataFrame, month_df: pd.DataFrame):
     )
 
     # ---------- 選股條件 ----------
+
     # 1. 收盤突破昨日最高價(包含上影線)
     condition1 = close_today > high_yesterday
 
     # 2. 日MACD OSC持續走強
     condition2 = osc_today >= osc_yesterday
 
-    # 3. 月MACD OSC不得轉弱
-    condition3 = month_osc >= month_osc_prev
+    # 3. 月MACD OSC判斷
+    if month_osc >= 0:
+        # 0軸以上不得轉弱
+        condition3 = month_osc >= month_osc_prev
+    else:
+        # 0軸以下必須向0軸收斂
+        condition3 = abs(month_osc) <= abs(month_osc_prev)
 
     passed = (
         condition1

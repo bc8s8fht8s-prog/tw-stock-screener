@@ -1,15 +1,7 @@
 name: Daily TW Stock Scan
 
 on:
-  push:
-    branches:
-      - main
-
   workflow_dispatch:
-
-  schedule:
-    # 每週一至週五 台灣時間 14:38（UTC 06:30）
-    - cron: "38 6 * * 1-5"
 
 permissions:
   contents: write

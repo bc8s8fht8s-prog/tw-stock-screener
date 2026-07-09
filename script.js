@@ -79,7 +79,7 @@ function renderPage(page) {
                 <h3>${stock.code} ${stock.name}</h3>
 
                 <p>
-                    收盤價：
+                    本日收盤：
                     <strong>${close}</strong>
                 </p>
 
@@ -89,8 +89,8 @@ function renderPage(page) {
                 </p>
 
                 <p>
-                    漲跌幅：
-                    <span>${change}%</span>
+                    本日漲幅：
+                    <span class="change-up">${change}%</span>
                 </p>
 
                 <p>

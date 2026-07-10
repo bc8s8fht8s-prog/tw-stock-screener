@@ -1,7 +1,7 @@
 {
-    "update_time": "2026-07-09 18:02:30",
+    "update_time": "2026-07-10 14:15:13",
     "scan_count": 1925,
-    "count": 189,
+    "count": 186,
     "stocks": [
         {
             "code": "1418",
@@ -607,17 +607,6 @@
             "change_percent": 3.77,
             "osc": -0.2838,
             "osc_prev": -0.3343
-        },
-        {
-            "code": "3085",
-            "name": "新零售",
-            "market": "上櫃",
-            "industry": "數位雲端",
-            "close": 12.15,
-            "high": 12.1,
-            "change_percent": 0.41,
-            "osc": 0.0154,
-            "osc_prev": 0.0121
         },
         {
             "code": "3147",
@@ -1240,11 +1229,11 @@
             "name": "隆大",
             "market": "上市",
             "industry": "建材營造業",
-            "close": 34.45,
-            "high": 34.25,
+            "close": 32.81,
+            "high": 32.62,
             "change_percent": 0.73,
-            "osc": -0.0422,
-            "osc_prev": -0.0433
+            "osc": -0.0402,
+            "osc_prev": -0.0412
         },
         {
             "code": "5530",
@@ -1647,11 +1636,11 @@
             "name": "達亞",
             "market": "上櫃",
             "industry": "生技醫療業",
-            "close": 176.5,
-            "high": 168.0,
+            "close": 168.1,
+            "high": 160.0,
             "change_percent": 5.06,
-            "osc": -0.1606,
-            "osc_prev": -0.558
+            "osc": -0.153,
+            "osc_prev": -0.5314
         },
         {
             "code": "6811",
@@ -1707,17 +1696,6 @@
             "change_percent": 2.23,
             "osc": -0.3703,
             "osc_prev": -0.6522
-        },
-        {
-            "code": "6904",
-            "name": "伯鑫",
-            "market": "上櫃",
-            "industry": "其他業",
-            "close": 128.0,
-            "high": 127.0,
-            "change_percent": 0.79,
-            "osc": 0.2202,
-            "osc_prev": 0.1992
         },
         {
             "code": "6907",
@@ -1927,17 +1905,6 @@
             "change_percent": 9.86,
             "osc": 0.7627,
             "osc_prev": 0.3187
-        },
-        {
-            "code": "8342",
-            "name": "益張",
-            "market": "上櫃",
-            "industry": "其他業",
-            "close": 91.0,
-            "high": 90.0,
-            "change_percent": 1.11,
-            "osc": 0.0781,
-            "osc_prev": 0.0036
         },
         {
             "code": "8383",

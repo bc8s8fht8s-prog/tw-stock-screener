@@ -53,11 +53,18 @@ def scan_market(limit=None):
                     "name": name,
                     "market": market,
                     "industry": industry,
+
                     "close": result["close"],
                     "high": result["high"],
                     "change_percent": result["change_percent"],
+
+                    # 日K OSC
                     "osc": result["osc"],
                     "osc_prev": result["osc_prev"],
+
+                    # 上一個已完成月份的月K OSC
+                    "month_osc": result["month_osc"],
+                    "month_osc_prev": result["month_osc_prev"],
                 })
 
                 print("    ✅ 符合")

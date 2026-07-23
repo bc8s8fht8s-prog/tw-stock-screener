@@ -15,13 +15,6 @@ MACD_FAST = 12
 MACD_SLOW = 26
 MACD_SIGNAL = 9
 
-# ===== OSC =====
-# None = 不設限
-# 1 = -1 ~ +1
-# 2 = -2 ~ +2
-# 3 = -3 ~ +3
-OSC_RANGE = None
-
 # ===== Log =====
 ENABLE_LOG = True
 

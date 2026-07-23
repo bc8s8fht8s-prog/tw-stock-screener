@@ -38,7 +38,7 @@
 
         </div>
 
-        <!-- 搜尋 + 排序 -->
+        <!-- 搜尋 + 排序 + 月OSC -->
         <div
             style="
                 margin:20px 0;
@@ -84,6 +84,24 @@
                 <option value="change">漲跌幅排序</option>
             </select>
 
+            <select
+                id="oscFilter"
+                onchange="changeOscFilter()"
+                style="
+                    padding:12px;
+                    font-size:16px;
+                    border:1px solid #cccccc;
+                    border-radius:10px;
+                    outline:none;
+                    cursor:pointer;
+                "
+            >
+                <option value="0">月 OSC 不設限</option>
+                <option value="1">月 OSC ±1</option>
+                <option value="2">月 OSC ±2</option>
+                <option value="3">月 OSC ±3</option>
+            </select>
+
         </div>
 
         <div id="stock-list"></div>
@@ -92,7 +110,7 @@
 
     </div>
 
-    <script src="script.js?v=1.4.0"></script>
+    <script src="script.js?v=1.5.1"></script>
 
 </body>
 

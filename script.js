@@ -12,6 +12,9 @@ let filteredStocks = [];
 // 排序方式
 let sortMode = "code";
 
+// OSC 篩選
+let oscFilter = 0;
+
 function sortStocks() {
 
     if (sortMode === "code") {
@@ -31,6 +34,52 @@ function sortStocks() {
 
 }
 
+function applyFilters() {
+
+    const keyword = document
+        .getElementById("search")
+        .value
+        .trim()
+        .toLowerCase();
+
+    filteredStocks = allStocks.filter(stock => {
+
+        // ---------- 搜尋 ----------
+        const matchKeyword =
+            keyword === "" ||
+            String(stock.code).toLowerCase().includes(keyword) ||
+            String(stock.name).toLowerCase().includes(keyword);
+
+        if (!matchKeyword) {
+            return false;
+        }
+
+        // ---------- OSC ----------
+        if (oscFilter !== 0) {
+
+            if (stock.month_osc == null) {
+                return false;
+            }
+
+            if (Math.abs(Number(stock.month_osc)) > oscFilter) {
+                return false;
+            }
+
+        }
+
+        return true;
+
+    });
+
+    sortStocks();
+
+    document.getElementById("count").textContent =
+        filteredStocks.length + " 檔";
+
+    renderPage(1);
+
+}
+
 async function loadData() {
 
     const response = await fetch("data/result.json");
@@ -38,15 +87,11 @@ async function loadData() {
     data = await response.json();
 
     allStocks = data.stocks;
-    filteredStocks = [...allStocks];
-
-    sortStocks();
 
     document.getElementById("update_time").textContent = data.update_time;
     document.getElementById("scan_count").textContent = data.scan_count;
-    document.getElementById("count").textContent = data.count + " 檔";
 
-    renderPage(1);
+    applyFilters();
 
 }
 
@@ -88,13 +133,27 @@ function renderPage(page) {
                 ? Number(stock.change_percent).toFixed(2)
                 : "--";
 
+        // 本日 OSC
+        const oscValue = stock.osc;
+
         const osc =
-            stock.osc != null
-                ? Number(stock.osc).toFixed(3)
+            oscValue != null
+                ? Number(oscValue).toFixed(3)
                 : "--";
 
         const oscClass =
-            stock.osc >= 0 ? "osc-up" : "osc-down";
+            oscValue >= 0 ? "osc-up" : "osc-down";
+
+        // 上月 OSC
+        const monthOscValue = stock.month_osc;
+
+        const monthOsc =
+            monthOscValue != null
+                ? Number(monthOscValue).toFixed(3)
+                : "--";
+
+        const monthOscClass =
+            monthOscValue >= 0 ? "osc-up" : "osc-down";
 
         stockList.innerHTML += `
 
@@ -118,9 +177,16 @@ function renderPage(page) {
                 </p>
 
                 <p>
-                    OSC：
+                    本日 OSC：
                     <span class="${oscClass}">
                         ${osc}
+                    </span>
+                </p>
+
+                <p>
+                    上月 OSC：
+                    <span class="${monthOsc >= 0 ? "osc-up" : "osc-down"}">
+                        ${monthOsc}
                     </span>
                 </p>
 
@@ -209,45 +275,26 @@ function renderPagination() {
 
 function searchStocks() {
 
-    const keyword = document
-        .getElementById("search")
-        .value
-        .trim()
-        .toLowerCase();
-
-    if (keyword === "") {
-
-        filteredStocks = [...allStocks];
-
-    } else {
-
-        filteredStocks = allStocks.filter(stock => {
-
-            const code = String(stock.code).toLowerCase();
-            const name = String(stock.name).toLowerCase();
-
-            return (
-                code.includes(keyword) ||
-                name.includes(keyword)
-            );
-
-        });
-
-    }
-
-    sortStocks();
-
-    renderPage(1);
+    applyFilters();
 
 }
 
 function changeSort() {
 
-    sortMode = document.getElementById("sortSelect").value;
+    sortMode =
+        document.getElementById("sortSelect").value;
 
-    sortStocks();
+    applyFilters();
 
-    renderPage(1);
+}
+
+function changeOscFilter() {
+
+    oscFilter = Number(
+        document.getElementById("oscFilter").value
+    );
+
+    applyFilters();
 
 }
 

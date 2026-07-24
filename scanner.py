@@ -48,9 +48,6 @@ def scan_market(limit=None):
 
             if result and result["pass"]:
 
-                # ===== 除錯：確認實際回傳內容 =====
-                print(result)
-
                 results.append({
                     "code": code,
                     "name": name,
@@ -65,7 +62,7 @@ def scan_market(limit=None):
                     "osc": result["osc"],
                     "osc_prev": result["osc_prev"],
 
-                    # 月K OSC
+                    # 上一個已完成月份的月K OSC
                     "month_osc": result["month_osc"],
                     "month_osc_prev": result["month_osc_prev"],
                 })
